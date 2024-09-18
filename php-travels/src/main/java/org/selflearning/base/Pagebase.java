@@ -8,12 +8,11 @@ import org.testng.annotations.AfterTest;
 
 import java.util.concurrent.TimeUnit;
 
-public class Pagebase {
-WebDriver driver;
+public class Pagebase extends Testbase {
+    protected WebDriver driver;
     public Pagebase(WebDriver driver) {
         this.driver=driver;
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
+//
     }
     public void scrollTo(int cordinateX, int cordinateY){
         String scrollCordinates = "window.scrollTo("+cordinateX+","+cordinateY+ ");";

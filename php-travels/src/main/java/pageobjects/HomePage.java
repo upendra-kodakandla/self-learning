@@ -25,6 +25,10 @@ public class HomePage extends Pagebase{
     @FindBy(how = How.XPATH, using = "//div[@class= 'nav-item--right']/ul/li[3]")
     WebElement button_account;
 
+    public HomePage navigateTODashboard() {
+        driver.navigate().to("https://phptravels.net/dashboard");
+        return this;
+    }
     public HomePage clickFlights() {
         button_flight.click();
         return this;

@@ -16,7 +16,6 @@ public class MyBookings extends Testbase {
         FlightsListPage flightsListPage = new FlightsListPage(driver);
         PersonalInformationPage personalInformationPage =new PersonalInformationPage(driver);
         MyBookingsPage myBookingsPage = new MyBookingsPage(driver);
-        navigateToURL();
         loginPage.loginToPhpApp();
         homePage.clickFlights();
         flightsPage.selectFromCity();
@@ -28,9 +27,11 @@ public class MyBookings extends Testbase {
         personalInformationPage.enterPassportOrIDNumber();
         personalInformationPage.selectAgree();
         personalInformationPage.clickConfirmBooking();
-        navigateToURL();
+        homePage.navigateTODashboard();
         homePage.clickMyBookings();
         boolean isAvailable = myBookingsPage.isBookingSuccessfull("Hello Everyone");
         Assert.assertTrue(isAvailable);
+
+
     }
 }
