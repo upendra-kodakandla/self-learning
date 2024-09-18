@@ -13,8 +13,6 @@ public class login extends Testbase {
         LoginPage loginPage= new LoginPage(driver);
         navigateToURL();
         loginPage.loginToPhpApp();
-
-
     }
 
 }
