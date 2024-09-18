@@ -6,14 +6,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 
+import java.util.concurrent.TimeUnit;
+
 public class Testbase {
     public  WebDriver driver;
-    public void  initializeDriver() {
+    private void  initializeDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-    driver.manage().window().maximize();
-    }
-    public void navigateToURL(){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
         driver.get("https://phptravels.net/login");
         try {
             Thread.sleep(5000);

@@ -14,7 +14,6 @@ public class FlightBooking extends Testbase {
         HomePage homePage = new HomePage(driver);
         FlightsListPage flightsListPage = new FlightsListPage(driver);
         PersonalInformationPage personalInformationPage =new PersonalInformationPage(driver);
-        navigateToURL();
         loginPage.loginToPhpApp();
         homePage.clickFlights();
         flightsPage.selectFromCity();

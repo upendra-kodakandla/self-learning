@@ -11,7 +11,6 @@ public class login extends Testbase {
     public void loginToApplication(){
         WebDriver driver = getDriver();
         LoginPage loginPage= new LoginPage(driver);
-        navigateToURL();
         loginPage.loginToPhpApp();
     }
 
